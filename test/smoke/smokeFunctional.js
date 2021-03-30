@@ -1,5 +1,6 @@
 import selector from '../../data/selectors.json';
 import expected from '../../data/expected.json';
+import  {name, gender, age, story} from '../../data/testData';
 
 describe('Required fields and story created', function () {
 
@@ -8,28 +9,31 @@ describe('Required fields and story created', function () {
         browser.url('');
     });
 
-   /* it('TC-026 The Submit button is enabled when required fields are filled in with valid values', function () {
+   it('TC-026 The Submit button is enabled when required fields are filled in with valid values', function () {
 
-        $(selector.nameField).setValue('LadyBug101');
-        $$(selector.genderButtons)[1].click();
-        $(selector.ageField).setValue('1234567890');
+        $(selector.nameField).setValue(name.default);
+        $$(selector.genderButtons)[gender.she].click();
+        $(selector.ageField).setValue(age.default);
         $(selector.storyField).click();
-        $$(selector.storyList)[6].click();
+        $$(selector.storyList)[story.Comedy].click();
         browser.pause(2000);
         let submitBtn = $(selector.submitButton)
         expect(submitBtn.isEnabled()).toEqual(true);;
 
 
     });
-*/
-    it('TC-027 User is redirected to the story page', function () {
 
-        $(selector.nameField).setValue('LadyBug101');
-        $$(selector.genderButtons)[1].click();
-        $(selector.ageField).setValue('1234567890');
+    it('TC-027 User is redirected to the story page', function () {
+        browser.refresh();
+
+        $(selector.nameField).setValue(name.default);
+        $$(selector.genderButtons)[gender.she].click();
+        $(selector.ageField).setValue(age.default);
         $(selector.storyField).click();
-        $$(selector.storyList)[6].click();
+        $$(selector.storyList)[story.Comedy].click();
         $(selector.submitButton).click();
+
+        browser.pause(2000);
 
         let tryAgainBtn = $(selector.tryAgainBtn)
         expect(tryAgainBtn.isDisplayed()).toEqual(true);;
