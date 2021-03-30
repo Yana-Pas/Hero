@@ -1,6 +1,7 @@
 import selector from '../../data/selectors.json';
 import expected from '../../data/expected.json';
 import  {name, gender, age, story} from '../../data/testData';
+import inputValues4 from '../../helpers/methods';
 
 describe('Required fields and story created', function () {
 
@@ -18,7 +19,7 @@ describe('Required fields and story created', function () {
         $$(selector.storyList)[story.Comedy].click();
         browser.pause(2000);
         let submitBtn = $(selector.submitButton)
-        expect(submitBtn.isEnabled()).toEqual(true);;
+        expect(submitBtn.isEnabled()).toEqual(true);
 
 
     });
@@ -26,11 +27,9 @@ describe('Required fields and story created', function () {
     it('TC-027 User is redirected to the story page', function () {
         browser.refresh();
 
-        $(selector.nameField).setValue(name.default);
-        $$(selector.genderButtons)[gender.she].click();
-        $(selector.ageField).setValue(age.default);
-        $(selector.storyField).click();
-        $$(selector.storyList)[story.Comedy].click();
+        inputValues4(name.default, gender.she, age.default, story.Comedy);
+
+
         $(selector.submitButton).click();
 
         browser.pause(2000);
