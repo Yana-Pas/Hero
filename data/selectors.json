@@ -1,0 +1,18 @@
+{
+  "pageHeader": "h3",
+  "pageInstruction": "h3 + p",
+  "nameField": "#name",
+  "nameLabel": "label[for=\"name\"]",
+  "genderButtons": ".ant-radio-wrapper",
+  "genderLabel": "label[for=\"gender\"]",
+  "ageField": "#age",
+  "ageLabel": "label[for=\"age\"]",
+  "storyField": ".ant-select-selector",
+  "storyLabel": "label[for=\"story\"]",
+  "storyList": ".ant-select-item",
+  "imageField": "span[role=\"button\"]",
+  "imageLabel": "label[title=\"5. Upload an image (optional)\"]",
+  "submitButton": "button[type=\"submit\"]",
+  "tryAgainBtn": ".btn-primary"
+
+}
